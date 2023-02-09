@@ -7,6 +7,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:gap/gap.dart';
 
+import '../utils/app_info_list.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -125,10 +127,9 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20),
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: const [
-                  HotelScreen(),
-                  HotelScreen(),
-                ],
+                children: hotelList
+                    .map((singlehotel) => HotelScreen(hotel: singlehotel))
+                    .toList(),
               ),
             )
           ],
