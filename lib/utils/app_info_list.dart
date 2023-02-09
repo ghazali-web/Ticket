@@ -1,4 +1,4 @@
-List<Map<String, dynamic>> HotelList = [
+List<Map<String, dynamic>> hotelList = [
   {
     'images': 'one.png',
     'place': 'Open space',
