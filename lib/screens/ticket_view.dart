@@ -1,5 +1,5 @@
 import 'package:gap/gap.dart';
-import 'package:book_ticket/thick_container/thick_container.dart';
+import 'package:book_ticket/widgets/thick_container.dart';
 import 'package:book_ticket/utils/app_layout.dart';
 import 'package:book_ticket/utils/app_styles.dart';
 import 'package:flutter/material.dart';

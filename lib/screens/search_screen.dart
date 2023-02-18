@@ -5,6 +5,9 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:gap/gap.dart';
 
+import '../widgets/double_text_widget.dart';
+import '../widgets/icon_text_widget.dart';
+
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
   @override
@@ -57,27 +60,34 @@ class SearchScreen extends StatelessWidget {
             ),
           )),
           Gap(AppLayout.getHeight(25)),
+          const AppIconText(
+            icon: Icons.flight_takeoff_rounded,
+            text: 'Departure',
+          ),
+          Gap(AppLayout.getHeight(15)),
+          const AppIconText(
+            icon: Icons.label_rounded,
+            text: 'Arrival',
+          ),
+          Gap(AppLayout.getHeight(20)),
           Container(
-            padding: EdgeInsets.symmetric(
-                vertical: AppLayout.getHeight(12),
-                horizontal: AppLayout.getHeight(12)),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(AppLayout.getHeight(10)),
-            ),
-            child: Row(
-              children: [
-                const Icon(
-                  Icons.flight_takeoff_rounded,
-                  color: Color(0xFFbFC2DF),
+              padding: EdgeInsets.symmetric(
+                  vertical: AppLayout.getHeight(18),
+                  horizontal: AppLayout.getHeight(15)),
+              decoration: BoxDecoration(
+                color: const Color(0xD91130CE),
+                borderRadius: BorderRadius.circular(AppLayout.getHeight(10)),
+              ),
+              child: Center(
+                child: Text(
+                  'Find Ticket',
+                  style: Styles.textStyle.copyWith(color: Colors.white),
                 ),
-                Gap(AppLayout.getWidth(25)),
-                Text(
-                  'Departures',
-                  style: Styles.textStyle,
-                )
-              ],
-            ),
+              )),
+          Gap(AppLayout.getHeight(25)),
+          const AppDoubleTextWidget(
+            bigText: 'Upcoming Flight ',
+            smallText: 'View All',
           )
         ],
       ),

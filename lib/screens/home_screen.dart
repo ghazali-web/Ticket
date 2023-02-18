@@ -8,6 +8,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:gap/gap.dart';
 
 import '../utils/app_info_list.dart';
+import '../widgets/double_text_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -69,23 +70,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   const Gap(40),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Upcoming Flight ',
-                        style: Styles.headLineStyle2,
-                      ),
-                      InkWell(
-                          onTap: () {
-                            print('on tapped clicked');
-                          },
-                          child: Text(
-                            'View All',
-                            style: Styles.textStyle
-                                .copyWith(color: Styles.primaryColor),
-                          ))
-                    ],
+                  const AppDoubleTextWidget(
+                    bigText: 'Upcoming Flight ',
+                    smallText: 'View All',
                   )
                 ],
               ),
@@ -101,26 +88,11 @@ class HomeScreen extends StatelessWidget {
                 )),
             const Gap(15),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Hotel',
-                    style: Styles.headLineStyle2,
-                  ),
-                  InkWell(
-                      onTap: () {
-                        print('on tapped clicked');
-                      },
-                      child: Text(
-                        'View All',
-                        style: Styles.textStyle
-                            .copyWith(color: Styles.primaryColor),
-                      ))
-                ],
-              ),
-            ),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: const AppDoubleTextWidget(
+                  bigText: 'Hotel',
+                  smallText: 'View All',
+                )),
             const Gap(15),
             SingleChildScrollView(
               padding: const EdgeInsets.only(left: 20),
