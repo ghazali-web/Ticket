@@ -88,6 +88,48 @@ class SearchScreen extends StatelessWidget {
           const AppDoubleTextWidget(
             bigText: 'Upcoming Flight ',
             smallText: 'View All',
+          ),
+          Gap(AppLayout.getHeight(15)),
+          Row(
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(
+                    vertical: AppLayout.getHeight(15),
+                    horizontal: AppLayout.getHeight(15)),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(AppLayout.getHeight(12)),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey.shade200,
+                        blurRadius: 1,
+                        spreadRadius: 1)
+                  ],
+                ),
+                height: AppLayout.getHeight(400),
+                width: size.width * .42,
+                child: Column(
+                  children: [
+                    Container(
+                      height: AppLayout.getHeight(190),
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(AppLayout.getHeight(20)),
+                        image: const DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage('assets/images/sit.jpg'),
+                        ),
+                      ),
+                    ),
+                    Gap(AppLayout.getHeight(12)),
+                    Text(
+                      '20% discount on the early boocking of this flight , don\'t miss .',
+                      style: Styles.headLineStyle2,
+                    ),
+                  ],
+                ),
+              )
+            ],
           )
         ],
       ),
