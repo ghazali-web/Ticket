@@ -10,7 +10,6 @@ class HotelScreen extends StatelessWidget {
   const HotelScreen({super.key, required this.hotel});
   @override
   Widget build(BuildContext context) {
-    print('${hotel['price']}');
     final size = AppLayout.getSize(context);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 17),
@@ -22,13 +21,13 @@ class HotelScreen extends StatelessWidget {
             BoxShadow(
                 color: Colors.grey.shade200, blurRadius: 2, spreadRadius: 1)
           ]),
-      height: 350,
+      height: AppLayout.getHeight(350),
       width: size.width * 0.6,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 180,
+            height: AppLayout.getHeight(180),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: Styles.primaryColor,
