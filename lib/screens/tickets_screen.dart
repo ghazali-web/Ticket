@@ -15,6 +15,7 @@ class TicketScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Styles.bgColor,
       body: Stack(
         children: [
           ListView(
@@ -32,11 +33,15 @@ class TicketScreen extends StatelessWidget {
                 firsttab: "Upcoming",
                 sencondtab: "Previous",
               ),
+              Gap(AppLayout.getHeight(10)),
               Container(
                   padding: EdgeInsets.only(
-                    left: AppLayout.getHeight(12),
+                    left: AppLayout.getHeight(0),
                   ),
-                  child: TicketView(ticket: ticketList[0])),
+                  child: TicketView(
+                    ticket: ticketList[0],
+                    iscolor: true,
+                  )),
             ],
           )
         ],
