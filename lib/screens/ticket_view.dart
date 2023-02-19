@@ -22,6 +22,7 @@ class TicketView extends StatelessWidget {
         child: Column(
           children: [
             //showing the orange part of card
+
             Container(
                 decoration: BoxDecoration(
                   color: const Color(0xFF526799),
@@ -80,7 +81,7 @@ class TicketView extends StatelessWidget {
                       const ThickContainer(),
                       const Spacer(),
                       Text(
-                        ticket['to']['name'],
+                        ticket['to']['code'],
                         style:
                             Styles.headLineStyle3.copyWith(color: Colors.white),
                       ),
@@ -106,7 +107,7 @@ class TicketView extends StatelessWidget {
                       SizedBox(
                         width: AppLayout.getWidth(120),
                         child: Text(
-                          ticket['to']['code'],
+                          ticket['to']['name'],
                           textAlign: TextAlign.end,
                           style: Styles.headLineStyle3
                               .copyWith(color: Colors.white),
@@ -116,6 +117,7 @@ class TicketView extends StatelessWidget {
                   )
                 ])),
             //showing the orange part of card
+
             Container(
               color: Styles.orangeColor,
               child: Row(
