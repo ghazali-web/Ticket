@@ -91,6 +91,7 @@ class SearchScreen extends StatelessWidget {
           ),
           Gap(AppLayout.getHeight(15)),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 padding: EdgeInsets.symmetric(
@@ -128,7 +129,57 @@ class SearchScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
+              ),
+              Column(
+                children: [
+                  Stack(
+                    children: [
+                      Container(
+                        height: AppLayout.getHeight(200),
+                        width: size.width * 0.44,
+                        decoration: BoxDecoration(
+                            color: const Color(0xFF3AB8B8),
+                            borderRadius:
+                                BorderRadius.circular(AppLayout.getHeight(18))),
+                        padding: EdgeInsets.symmetric(
+                            vertical: AppLayout.getHeight(15),
+                            horizontal: AppLayout.getHeight(15)),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Descover \n for survey ',
+                              style: Styles.headLineStyle2.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                            Gap(AppLayout.getHeight(10)),
+                            Text(
+                              'take the survey about our services and get discount ',
+                              style: Styles.headLineStyle2.copyWith(
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                  fontSize: 18),
+                            )
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                          right: -45,
+                          top: -40,
+                          child: Container(
+                            padding: EdgeInsets.all(AppLayout.getHeight(30)),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                  width: 18, color: const Color(0xFF189999)),
+                              color: Colors.transparent,
+                            ),
+                          ))
+                    ],
+                  )
+                ],
+              ),
             ],
           )
         ],
