@@ -7,6 +7,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:gap/gap.dart';
 
+import '../widgets/Column_layout.dart';
 import '../widgets/ticket_tab_widget.dart';
 
 class TicketScreen extends StatelessWidget {
@@ -40,8 +41,38 @@ class TicketScreen extends StatelessWidget {
                   ),
                   child: TicketView(
                     ticket: ticketList[0],
-                    iscolor: true,
+                    iscolor: false,
                   )),
+              Gap(AppLayout.getHeight(2)),
+              Container(
+                margin: const EdgeInsets.only(right: 15),
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppLayout.getHeight(15),
+                ),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius:
+                        BorderRadius.circular(AppLayout.getHeight(10))),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        AppColumnLayout(
+                            firstText: 'Flutter DB',
+                            secondText: 'Passenger',
+                            alignement: CrossAxisAlignment.start,
+                            iscolor: false),
+                        AppColumnLayout(
+                            firstText: '5221 456789',
+                            secondText: 'passport',
+                            alignement: CrossAxisAlignment.end,
+                            iscolor: false)
+                      ],
+                    )
+                  ],
+                ),
+              )
             ],
           )
         ],
