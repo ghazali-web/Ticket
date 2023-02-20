@@ -6,8 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:gap/gap.dart';
-
+import 'package:barcode_widget/barcode_widget.dart';
 import '../widgets/Column_layout.dart';
+import '../widgets/layout_builder_widget.dart';
 import '../widgets/ticket_tab_widget.dart';
 
 class TicketScreen extends StatelessWidget {
@@ -22,7 +23,7 @@ class TicketScreen extends StatelessWidget {
           ListView(
             padding: EdgeInsets.symmetric(
                 vertical: AppLayout.getHeight(20),
-                horizontal: AppLayout.getHeight(20)),
+                horizontal: AppLayout.getHeight(3)),
             children: [
               Gap(AppLayout.getHeight(40)),
               Text(
@@ -37,7 +38,7 @@ class TicketScreen extends StatelessWidget {
               Gap(AppLayout.getHeight(10)),
               Container(
                   padding: EdgeInsets.only(
-                    left: AppLayout.getHeight(0),
+                    left: AppLayout.getHeight(10),
                   ),
                   child: TicketView(
                     ticket: ticketList[0],
@@ -45,7 +46,7 @@ class TicketScreen extends StatelessWidget {
                   )),
               Gap(AppLayout.getHeight(2)),
               Container(
-                margin: const EdgeInsets.only(right: 15),
+                margin: const EdgeInsets.only(right: 8, left: 8),
                 padding: EdgeInsets.symmetric(
                   horizontal: AppLayout.getHeight(15),
                 ),
@@ -69,7 +70,106 @@ class TicketScreen extends StatelessWidget {
                             alignement: CrossAxisAlignment.end,
                             iscolor: false)
                       ],
-                    )
+                    ),
+                    Gap(AppLayout.getHeight(20)),
+                    const LayoutBuilserWidget(
+                        section: 6, iscolor: false, width: 5),
+                    Gap(AppLayout.getHeight(20)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        AppColumnLayout(
+                            firstText: '951951 1981891981',
+                            secondText: 'Number of E-ticket',
+                            alignement: CrossAxisAlignment.start,
+                            iscolor: false),
+                        AppColumnLayout(
+                            firstText: 'B2SG28',
+                            secondText: 'Booking code',
+                            alignement: CrossAxisAlignment.end,
+                            iscolor: false)
+                      ],
+                    ),
+                    Gap(AppLayout.getHeight(20)),
+                    const LayoutBuilserWidget(
+                        section: 6, iscolor: false, width: 5),
+                    Gap(AppLayout.getHeight(20)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                Image.asset(
+                                  'assets/images/visa.png',
+                                  scale: 11,
+                                ),
+                                Text(
+                                  ' ***2462',
+                                  style: Styles.headLineStyle3,
+                                )
+                              ],
+                            ),
+                            const Gap(5),
+                            Text(
+                              'payement methode',
+                              style: Styles.headLineStyle4,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Row(
+                              children: const [
+                                AppColumnLayout(
+                                    firstText: '\$249.99',
+                                    secondText: 'price',
+                                    alignement: CrossAxisAlignment.end,
+                                    iscolor: false),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Gap(AppLayout.getHeight(20)),
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                            bottomLeft:
+                                Radius.circular(AppLayout.getHeight(21)),
+                            bottomRight:
+                                Radius.circular(AppLayout.getHeight(21)),
+                          )),
+                      margin: const EdgeInsets.only(left: 15, right: 15),
+                      padding: const EdgeInsets.only(top: 15, bottom: 15),
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: AppLayout.getHeight(15)),
+                        child: ClipRRect(
+                          borderRadius:
+                              BorderRadius.circular(AppLayout.getHeight(15)),
+                          child: BarcodeWidget(
+                            data: 'hhtps//github/ghazaliwab',
+                            barcode: Barcode.code128(),
+                            drawText: false,
+                            color: Styles.textColor,
+                            width: double.infinity,
+                            height: 70,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                        padding: EdgeInsets.only(
+                          left: AppLayout.getHeight(0),
+                        ),
+                        child: TicketView(
+                          ticket: ticketList[0],
+                          iscolor: true,
+                        )),
                   ],
                 ),
               )

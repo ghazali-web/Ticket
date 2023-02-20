@@ -8,11 +8,12 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'dart:io' show Platform;
 
 import '../widgets/Column_layout.dart';
+import '../widgets/layout_builder_widget.dart';
 
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticket;
-  final bool iscolor;
-  const TicketView({super.key, required this.ticket, required this.iscolor});
+  final bool? iscolor;
+  const TicketView({super.key, required this.ticket, this.iscolor});
 
   @override
   Widget build(BuildContext context) {
@@ -54,26 +55,10 @@ class TicketView extends StatelessWidget {
                         children: [
                           SizedBox(
                             height: AppLayout.getHeight(24),
-                            child: LayoutBuilder(
-                              builder: (BuildContext context,
-                                  BoxConstraints constraints) {
-                                return Flex(
-                                  direction: Axis.horizontal,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: List.generate(
-                                      (constraints.constrainWidth() / 16)
-                                          .floor(),
-                                      (index) => SizedBox(
-                                          width: AppLayout.getHeight(16),
-                                          height: AppLayout.getHeight(1),
-                                          child: const DecoratedBox(
-                                            decoration: BoxDecoration(
-                                              color: Colors.white,
-                                            ),
-                                          ))),
-                                );
-                              },
+                            child: const LayoutBuilserWidget(
+                              section: 6,
+                              iscolor: false,
+                              width: 5,
                             ),
                           ),
                           Center(
@@ -219,6 +204,7 @@ class TicketView extends StatelessWidget {
                           firstText: ticket['number'].toString(),
                           secondText: 'Number',
                           iscolor: true),
+                      Gap(AppLayout.getHeight(20)),
                     ],
                   )
                 ],
