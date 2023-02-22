@@ -26,14 +26,14 @@ class AppColumnLayout extends StatelessWidget {
       children: [
         Text(
           firstText,
-          style: iscolor == null
+          style: iscolor == true
               ? Styles.headLineStyle3.copyWith(color: Colors.white)
               : Styles.headLineStyle3,
         ),
         Gap(AppLayout.getHeight(5)),
         Text(
           secondText,
-          style: iscolor == null
+          style: iscolor == true
               ? Styles.headLineStyle4.copyWith(color: Colors.white)
               : Styles.headLineStyle4,
         )

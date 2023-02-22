@@ -193,17 +193,17 @@ class TicketView extends StatelessWidget {
                           alignement: CrossAxisAlignment.start,
                           firstText: ticket['date'],
                           secondText: 'Date',
-                          iscolor: true),
+                          iscolor: iscolor),
                       AppColumnLayout(
                           alignement: CrossAxisAlignment.center,
                           firstText: ticket['departure_time'],
                           secondText: 'Departure Time',
-                          iscolor: true),
+                          iscolor: iscolor),
                       AppColumnLayout(
                           alignement: CrossAxisAlignment.end,
                           firstText: ticket['number'].toString(),
                           secondText: 'Number',
-                          iscolor: true),
+                          iscolor: iscolor),
                       Gap(AppLayout.getHeight(20)),
                     ],
                   )
